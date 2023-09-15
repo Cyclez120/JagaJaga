@@ -1,8 +1,18 @@
 const module = new Module("ModuleList", true, true, ModuleCategory.MISC);
 
+const mode = new ModeSetting("Mode", ["Rainbow", "Custom"]);
+
 const size = new SliderSetting("Size", [0.5, 0, 1, 0.01]);
 
 const distanceBetweenElements = new SliderSetting("Distance between elements", [10, 0, 25, 0.1]);
+
+const colorLimitation = new SliderSetting("Color limitation", [180, 0, 360, 1]);
+
+const length = new SliderSetting("Length", [500, 1, 1000, 1]);
+
+const speed = new SliderSetting("Speed", [20, 1, 50, 1]);
+
+//const testSetting = new TextFieldSetting("Test", "test", "test 1;test 2;test 3");
 
 
 
@@ -44,7 +54,7 @@ if (Data.getBoolean("loaded", false)) {
 
     });
 
-    module.addSettings([size, distanceBetweenElements]);
+    module.addSettings([mode, size, distanceBetweenElements, colorLimitation, length, speed/*, testSetting*/]);
 
     module.setOnToggleListener(function() {
 
@@ -78,11 +88,11 @@ if (Data.getBoolean("loaded", false)) {
 
 function color(c) {
 
-	var v1 = Math.ceil(java.lang.System.currentTimeMillis() + (c * 500)) / 20;
+	var v1 = Math.ceil(java.lang.System.currentTimeMillis() + (c * length.getCurrentValue())) / speed.getCurrentValue();
 
     v1 %= 360;
 
-	return android.graphics.Color.HSVToColor([v1 > 180? v1: 360 - v1, 0.6, 1]);
+	return android.graphics.Color.HSVToColor([mode.getCurrentMode() == "Rainbow"? v1: v1 > colorLimitation.getCurrentValue()? v1: 360 - v1, 0.6, 1]);
 
 };
 
@@ -134,11 +144,31 @@ function text(module, index) {
 
 	text.setLayoutParams(params);
 
-    
+
 
 	return text;
 
 };
+
+
+
+/*function check(n) {
+
+    var blocked = testSetting.getText().split(';');
+
+    for (let i = 0; i < blocked.length; i++) {
+
+        if (n == blocked[i]) {
+
+            return false;
+
+        };
+
+    };
+
+    return true;
+
+};*/
 
 
 
@@ -150,13 +180,15 @@ function refreshMods(layout, time) {
 
     ModuleManager.getModuleNames().forEach(function (e, i, a) {
 
-        if (Module.isActive(e) && e != "Notifications" && e != "ModuleList") {
+        if (Module.isActive(e) && e != "Notifications" && e != "ModuleList"/* && check(e)*/) {
 
             names.push(e);
 
         };
 
 	});
+
+    
 
 
 
