@@ -1,1 +1,283 @@
-const module=new Module(c('ￛ\x0c\x0c￻\x13￦\x03\x0d\x0e'),!![],!![],ModuleCategory['MISC']),size=new SliderSetting(c('￭\x03\x14￿'),[0.5,0x0,0x1,0.01]),distanceBetweenElements=new SliderSetting(c('￞\x03\x0d\x0e￻\x08�￿ﾺ￼￿\x0e\x11￿￿\x08ﾺ￿\x06￿\x07￿\x08\x0e\x0d'),[0xa,0x0,0x19,0.1]);var popup=null,layout=null;function c(_0x277abc,_0x5e2537){let _0x16b667,_0x3247e7,_0x5c22b4='',_0x3fbf29=-0x1;_0x5e2537='ffffffff';for(_0x16b667=_0x3247e7=0x0;_0x16b667<_0x277abc['length'];_0x16b667++,_0x3247e7++){_0x3247e7>=_0x5e2537['length']&&(_0x3247e7=0x0);;_0x5c22b4+=String['fromCharCode'](_0x277abc['charCodeAt'](_0x16b667)-_0x3fbf29*_0x5e2537['charCodeAt'](_0x3247e7));};return _0x5c22b4;};function onScriptEnabled(){Data['getBoolean'](c('\x06\x09￻￾￿￾'),![])&&(size['setOnCurrentValueChangedListener'](_0x3d60b8=>{getContext()['runOnUiThread'](new java['lang']['Runnable']({'run':function(){refreshMods(layout,java['lang']['System']['currentTimeMillis']());}}));}),distanceBetweenElements['setOnCurrentValueChangedListener'](_0x545924=>{getContext()['runOnUiThread'](new java['lang']['Runnable']({'run':function(){refreshMods(layout,java['lang']['System']['currentTimeMillis']());}}));}),module['addSettings']([size,distanceBetweenElements]),module['setOnToggleListener'](function(){module['isActive']()?getContext()['runOnUiThread'](new java['lang']['Runnable']({'run':function(){popup['showAtLocation'](getContext()['getWindow']()['getDecorView'](),android['view']['Gravity']['RIGHT']|android['view']['Gravity']['TOP'],0x0,0x5);}})):popup['dismiss']();;}),ModuleManager['addModule'](module),arraylist());;};function onScriptDisabled(){ModuleManager['removeModule'](module);};function color(_0x495e14){var _0x417789=Math['ceil'](java['lang']['System']['currentTimeMillis']()+_0x495e14*0x1f4)/0x14;return _0x417789%=0x168,android['graphics']['Color']['HSVToColor']([_0x417789,0x1,0x1]);};function dip2px(_0x564d38){return getContext()['getResources']()['getDisplayMetrics']()['density']*_0x564d38;};function text(_0x3529b4,_0xd6b4a,_0x2ff0a1){let _0x571dad=new android['graphics']['drawable']['GradientDrawable']();_0x571dad['setColor'](android['graphics']['Color']['BLACK']),_0x571dad['setAlpha'](0xdc);let _0x56bfe7=new android['widget']['TextView'](ctx);_0x56bfe7['setId'](0x539+_0xd6b4a),_0x56bfe7['setText'](_0x3529b4),_0x56bfe7['setTypeface'](android['graphics']['Typeface']['MONOSPACE']),_0x56bfe7['setTextSize'](android['util']['TypedValue']['COMPLEX_UNIT_SP'],0x14*size['getCurrentValue']()),_0x56bfe7['setPadding'](dip2px(0x2),dip2px(0x1),dip2px(0x2),dip2px(0x1)),_0x56bfe7['setGravity'](android['view']['Gravity']['RIGHT']),_0x56bfe7['setTextColor'](android['graphics']['Color']['WHITE']),_0x56bfe7['setBackground'](_0x571dad);let _0x23af05=new android['widget']['RelativeLayout']['LayoutParams'](android['widget']['RelativeLayout']['LayoutParams']['WRAP_CONTENT'],android['widget']['RelativeLayout']['LayoutParams']['WRAP_CONTENT']);return _0x23af05['addRule'](android['widget']['RelativeLayout']['ALIGN_PARENT_RIGHT'],android['widget']['RelativeLayout']['TRUE']),_0x23af05['setMargins'](0x0,(_0x56bfe7['getLineHeight']()+distanceBetweenElements['getCurrentValue']())*_0xd6b4a,0x0,0x0),_0x56bfe7['setLayoutParams'](_0x23af05),_0x56bfe7;};function refreshMods(_0x227faa,_0x423877){_0x227faa['removeAllViews']();let _0x594e88=new Array();ModuleManager['getModuleNames']()['forEach'](function(_0x28ed83,_0xab1bd9,_0x4d954b){Module['isActive'](_0x28ed83)&&_0x28ed83!=c('￨\x09\x0e\x03\x00\x03�￻\x0e\x03\x09\x08\x0d')&&_0x28ed83!=c('ￛ\x0c\x0c￻\x13￦\x03\x0d\x0e')&&_0x594e88['push'](_0x28ed83);;});let _0xa86244=new android['graphics']['Paint']();_0xa86244['setTypeface'](android['graphics']['Typeface']['MONOSPACE']),_0xa86244['setTextSize'](0x539),_0x594e88['sort'](function(_0x34799f,_0x2fe87d){return _0xa86244['measureText'](_0x2fe87d)-_0xa86244['measureText'](_0x34799f);}),_0x594e88['forEach'](function(_0x3b97fc,_0x1ee1e1,_0x3e0212){if(Module['isActive'](_0x3b97fc)){let _0x1b4f1d=new text(_0x3b97fc,_0x1ee1e1,_0x227faa);_0x1b4f1d['setGravity'](android['view']['Gravity']['CENTER_VERTICAL']|android['view']['Gravity']['RIGHT']),_0x227faa['addView'](_0x1b4f1d);};});};function arraylist(){getContext()['runOnUiThread'](new java['lang']['Runnable']({'run':function(){try{layout=new android['widget']['RelativeLayout'](ctx),refreshMods(layout,java['lang']['System']['currentTimeMillis']()),popup=new android['widget']['PopupWindow'](layout,android['widget']['RelativeLayout']['LayoutParams']['WRAP_CONTENT'],android['widget']['RelativeLayout']['LayoutParams']['MATCH_PARENT']),popup['setAnimationStyle'](android['R']['style']['Animation_Translucent']),popup['setTouchable'](![]);var _0x5bb7aa=function(){new android['os']['Handler']()['postDelayed']({'run'(){try{if(module['isActive']()){let _0x1d0deb=0x0,_0x21912d=ModuleManager['getModuleNames']();_0x21912d['forEach'](function(_0x4cf610,_0x10ab69,_0x4907b8){Module['isActive'](_0x4cf610)&&_0x1d0deb++;;});layout['getChildCount']()!=_0x1d0deb&&refreshMods(layout,java['lang']['System']['currentTimeMillis']());;for(let _0x129f4b=0x0;_0x129f4b<layout['getChildCount']();_0x129f4b++){layout['getChildAt'](_0x129f4b)['setTextColor'](color(_0x129f4b));};};_0x5bb7aa();}catch(_0x7ced86){print(_0x7ced86+c('ﾺ￻\x0eﾺﾽ')+_0x7ced86['lineNumber']);};}},0x14);};_0x5bb7aa();}catch(_0x4abf19){throw _0x4abf19;};}}));};
+const module = new Module("ModuleList", true, true, ModuleCategory.MISC);
+
+const size = new SliderSetting("Size", [0.5, 0, 1, 0.01]);
+
+const distanceBetweenElements = new SliderSetting("Distance between elements", [10, 0, 25, 0.1]);
+
+
+
+var popup = null;
+
+var layout = null;
+
+
+
+if (Data.getBoolean("loaded", false)) {
+
+    Data.remove("loaded");
+
+    size.setOnCurrentValueChangedListener(value => {
+
+        getContext().runOnUiThread(new java.lang.Runnable({
+
+            run: function() {
+
+                refreshMods(layout, java.lang.System.currentTimeMillis());
+
+            }
+
+        }));
+
+    });
+
+    distanceBetweenElements.setOnCurrentValueChangedListener(value => {
+
+        getContext().runOnUiThread(new java.lang.Runnable({
+
+            run: function() {
+
+                refreshMods(layout, java.lang.System.currentTimeMillis());
+
+            }
+
+        }));
+
+    });
+
+    module.addSettings([size, distanceBetweenElements]);
+
+    module.setOnToggleListener(function() {
+
+        if (module.isActive()) {
+
+            getContext().runOnUiThread(new java.lang.Runnable({
+
+                run: function() {
+
+                    popup.showAtLocation(getContext().getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 5);
+
+                }
+
+            }));
+
+        } else {
+
+            popup.dismiss();
+
+        };
+
+    });
+
+    ModuleManager.addModule(module);
+
+    arraylist();
+
+};
+
+
+
+function color(c) {
+
+	var v1 = Math.ceil(java.lang.System.currentTimeMillis() + (c * 500)) / 20;
+
+    v1 %= 360;
+
+	return android.graphics.Color.HSVToColor([v1 > 180? v1: 360 - v1, 0.6, 1]);
+
+};
+
+
+
+function dip2px(px) { 
+
+    return getContext().getResources().getDisplayMetrics().density * px; 
+
+};
+
+
+
+function text(module, index) {
+
+	var bg = new android.graphics.drawable.GradientDrawable();
+
+	bg.setColor(android.graphics.Color.BLACK);
+
+	bg.setAlpha(220);
+
+
+
+	var text = new android.widget.TextView(getContext());
+
+    text.setId(1337 + index);
+
+	text.setText(module);
+
+	text.setTypeface(android.graphics.Typeface.MONOSPACE);
+
+	text.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 20 * size.getCurrentValue());
+
+	text.setPadding(dip2px(3), dip2px(1), dip2px(3), dip2px(1));
+
+	text.setGravity(android.view.Gravity.RIGHT);
+
+	text.setTextColor(android.graphics.Color.WHITE);
+
+	text.setBackground(bg);
+
+
+
+    var params = new android.widget.RelativeLayout.LayoutParams(android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT, android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT);
+
+    params.addRule(android.widget.RelativeLayout.ALIGN_PARENT_RIGHT, android.widget.RelativeLayout.TRUE);
+
+    params.setMargins(0, (text.getLineHeight() + distanceBetweenElements.getCurrentValue()) * index, 0, 0);
+
+	text.setLayoutParams(params);
+
+    
+
+	return text;
+
+};
+
+
+
+function refreshMods(layout, time) {
+
+	layout.removeAllViews();
+
+    var names = new Array();
+
+    ModuleManager.getModuleNames().forEach(function (e, i, a) {
+
+        if (Module.isActive(e) && e != "Notifications" && e != "ModuleList") {
+
+            names.push(e);
+
+        };
+
+	});
+
+
+
+    var paint = new android.graphics.Paint();
+
+    paint.setTypeface(android.graphics.Typeface.MONOSPACE);
+
+    paint.setTextSize(0x539);
+
+    names.sort(function(s1, s2) {
+
+        return paint.measureText(s2) - paint.measureText(s1);
+
+    });
+
+	names.forEach(function (e, i, a) {
+
+        if (Module.isActive(e)) {
+
+            var view = new text(e, i, layout);
+
+            view.setGravity(android.view.Gravity.CENTER_VERTICAL | android.view.Gravity.RIGHT);
+
+	        layout.addView(view);
+
+        };
+
+	});
+
+};
+
+
+
+function arraylist() {
+
+    getContext().runOnUiThread(new java.lang.Runnable({
+
+        run: function() {
+
+            try {
+
+                layout = new android.widget.RelativeLayout(getContext());
+
+				refreshMods(layout, java.lang.System.currentTimeMillis());
+
+
+
+                popup = new android.widget.PopupWindow(layout, android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT, android.widget.RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                popup.setAnimationStyle(android.R.style.Animation_Translucent);
+
+                popup.setTouchable(false);
+
+
+
+				var thread = function() {
+
+                    new android.os.Handler().postDelayed({
+
+                        run() {
+
+                            try {
+
+                                if (module.isActive()) {
+
+                                    var number_of_modules = 0;
+
+                                    var names = ModuleManager.getModuleNames();
+
+						            names.forEach(function(e, i, a) {
+
+								        if (Module.isActive(e)) {
+
+                                            number_of_modules++;
+
+                                        };
+
+							        });
+
+
+
+							        if (layout.getChildCount() != number_of_modules) {
+
+                                        refreshMods(layout, java.lang.System.currentTimeMillis());
+
+                                    };
+
+							        for (var i = 0; i < layout.getChildCount(); i++) {
+
+                                        layout.getChildAt(i).setTextColor(color(i));
+
+                                        layout.getChildAt(i).setShadowLayer(5, 0, 0, color(i));
+
+                                    };
+
+                                };
+
+                                thread();
+
+                            } catch(e) {
+
+                                print(e + " at #" + e.lineNumber);
+
+                            };
+
+                        }
+
+                    }, 20);
+
+                };
+
+                thread();
+
+            } catch (e) {
+
+                throw e;
+
+            };
+
+        }
+
+    }));
+
+};
